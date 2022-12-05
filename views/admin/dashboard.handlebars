@@ -1,0 +1,126 @@
+<html>
+   <div id="div">
+   <h1>Dashboard</h1>
+   <link rel="stylesheet" href="/css/dashboard.css">
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Massas', 'Quantidade'],
+          ['Massa Comum',     {{this.resultComum}}],
+          ['Massa Temperada',  {{this.resultTemperada}}],
+          ['Massa Integral',  {{this.resultIntegral}}],
+      
+        ]);
+
+        var options = {
+          title: 'Massas mais vendidas',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+   <h1></h1>
+    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+  </body>
+
+<div>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+
+
+</div>
+
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Borda", "Quantidade", { role: "style" } ],
+        ["Borda de Chocolate", {{this.resultChocolate}}, "#87CEFA"],
+        ["Borda de Cheddar", {{this.resultCheddar}}, "#8FBC8F"],
+        ["Borda de Catupiry", {{this.resultCatupiry}}, "#BC8F8F"],
+       
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Bordas mais vendidas",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
+<div id="columnchart_values" style="width: 900px; height: 300px;"></div>
+
+<div>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+</div>
+
+   <script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Sabores", "Quantidade", { role: "style" } ],
+        ["Filé com Cheddar", {{this.resultFile}}, "#BC8F8F"],
+        ["Frango com Catupiry", {{this.resultFrango}}, "#FFDEAD"],
+        ["Margherita", {{this.resultMargherita}}, "	#008080"],
+        ["Portuguesa", {{this.resultPortuguesa}}, "#708090"],
+        ["Quatro Queijos", {{this.resultQueijos}}, "#6959CD"],
+        ["Calabresa", {{this.resultCalabresa}}, "gold"],
+        ["Lombinho", {{this.resultLombinho}}, "color: #e5e4e2"]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Sabores mais vendidos",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
+<div id="barchart_values" style="width: 900px; height: 300px;"></div>
+</div>
+</html>

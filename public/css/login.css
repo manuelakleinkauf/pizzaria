@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #F6F0EF;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #C65222;
+}
+h1{
+    font-size: 22px;
+    margin-bottom: 25px;
+    margin-left: 11vw;
+}
+.btn{
+	border-radius: 15px;
+    text-transform: uppercase;
+    font-size: 10px;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 150px;
+    align-self: center;
+    border: none;
+    margin-top: 1rem;
+}
+.container{
+    margin-top: 10vh;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    position: relative;
+    
+}
+.form{
+    display: grid;
+    
+}
+
+.form input {
+    height: 6vh;
+    width: 27vw;
+	border: 1px solid #f8af2600;
+    background-color: #f8af269d;
+    margin-bottom: 4vh;
+}
+.inputLogin{
+    border-radius: 5px;
+}
+.inputLogin::placeholder{
+    color: #C65222;
+}
+
+.divBtn input{
+    height: 6vh;
+    width: 12vw;
+    border: 1px solid #C65222;
+    background-color: #C65222;
+    color: #F6F0EF;
+    margin-left:15vw;
+}
+.firstContent{
+    width: 100%;
+    margin-left: 15vw;
+    display: block;
+}
+#logo{
+    width: 35vw;
+    margin-left: 12vw;
+    margin-right: 5vw;
+    
+}
+.logoCelular{
+    display: none;
+}
+@media only screen and (max-width: 650px){
+    h1{
+        font-size: 18px;
+        margin-left: 22vw;
+    }
+    .form input {
+        height: 6vh;
+        width: 70vw;
+        margin-bottom: 3vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    .logoDesktop{
+        display: none;
+    }
+    .logoCelular{
+        display: flex;
+        width: 25vw;
+    }
+    .logoCelular #logo{
+        width: 60vw;
+        margin-left:6vw;
+        
+    }
+    .divBtn input{
+        height: 6vh;
+        width: 12vw;
+        border: 1px solid #C65222;
+        background-color: #C65222;
+        color: #F6F0EF;
+        margin-left: 44vw;
+    }
+
+   
+}

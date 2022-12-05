@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #F6F0EF;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #c75423;
+}
+h1{
+    margin-left: 25vw;
+    margin-top: 10vh;
+    margin-bottom: 8vh;
+    font-size: 28px;
+}
+#div{
+    margin-left: 200px;
+}
+

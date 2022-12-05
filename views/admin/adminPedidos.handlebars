@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="/css/adminPedidos.css">
+<h1>Gerenciamento de pedidos</h1>
+
+<table border="1">
+     <tr>
+        <td>id</td>
+        <td>Nome Cliente</td>
+        <td>Massa</td>
+        <td>Borda</td>
+        <td>Sabores</td>
+        <td>Status</td>
+    </tr>
+    {{#each pedidos}}
+        <tr>
+                <form action="/editarStatusPost" method="POST">
+                    <td><input type="text" value="{{this.id}}" name="id" ></td>
+                    <td>{{this.nome}}</td>
+                    <td>{{this.massa}}</td>
+                    <td>{{this.borda}}</td>
+                    <td>{{this.sabores}}</td>
+                    <td>
+                        
+                        <select name="status">
+                            <option value="{{this.status}}">{{this.status}}</option>
+                            <option value="Em produção">Em produção</option>
+                            <option value="Em entrega">Em entrega</option>
+                            <option value="Concluído">Concluído</option>
+                        </select>
+                        <input type="submit" name="editarStatus" id="editar" value="Editar Status"/>
+                    </td>
+                     
+                </form>
+                
+               
+        </tr>
+    {{/each}}
+    <form action="/remove" method="POST">
+        <p>Deletando pedido...</p>
+        <input type="number" name="id" value="">
+        <input type="submit" id="btnExcluir" class="btn" value="Excluir">
+    </form>
+</table>
+
+
+   

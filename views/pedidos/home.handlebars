@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/pedidos.css">
+    <title>Pedidos</title>
+</head>
+<body>
+    <header>
+        <img src="/imagens/João.png" id="logo"/>
+    </header>
+    <main>
+        <h1>MONTE SUA PIZZA!</h1>
+        <form action="/pedido" name="pedidos" method="POST">
+          <input class="inputNome" type="nome" name="nome" placeholder="Informe seu nome" required="required"/>
+          
+            <div id="massa">
+                <p>Massas</p>
+                <select name="massa">
+                    <option value="comum">Massa Comum</option>
+                    <option value="integral">Massa Integral</option>
+                    <option value="temperada">Massa Temperada</option>
+                </select>
+            </div>
+
+            <div id="borda">
+                <p>Bordas</p>
+               <select name="borda">
+                    <option value="chocolate">Borda de chocolate</option>
+                    <option value="cheddar">Borda de Cheddar</option>
+                    <option value="catupiry">Borda de Catupiry</option>
+                </select>
+            </div>
+            
+            <div id="sabores">
+                <p>Sabores (Máximo 3)</p>
+                <select multiple name="sabores[]">
+                    <option value="Quatro queijos">4 Queijos</option>
+                    <option value="Frango com catupiry">Frango com Catupiry</option>
+                    <option value="Calabresa">Calabresa</option>
+                    <option value="Lombinho">Lombinho</option>
+                    <option value="Filé com cheddar">Filé com Cheddar</option>
+                    <option value="Portuguesa">Portuguesa</option>
+                    <option value="Margherita">Margherita</option>
+                </select>
+            </div>
+            
+          
+
+            <div class="divBtn">
+                <input class="btn" id="btn" type="submit" name="finalizar" value="FINALIZAR PEDIDO"/>
+            </div>
+        </form>
+    </main>
+    <footer>
+        
+    </footer>
+</body>
+</html>
